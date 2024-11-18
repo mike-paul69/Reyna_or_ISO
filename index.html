@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Mentor Bot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Academic Mentor Bot</h1>
+            <p>Get personalized study plans based on your performance</p>
+        </div>
+
+        <div class="setup-container">
+            <h2>Enter Your Academic Marks</h2>
+            <form class="marks-form" id="marksForm">
+                <div class="form-group">
+                    <label for="DSA">DSA (out of 100):</label>
+                    <input type="number" id="DSA" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="Java">Java (out of 100):</label>
+                    <input type="number" id="Java" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="C">C (out of 100):</label>
+                    <input type="number" id="C" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="operating-system">Operating System (out of 100):</label>
+                    <input type="number" id="operating-system" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="git">GIT (out of 100):</label>
+                    <input type="number" id="git" min="0" max="100" required>
+                </div>
+                <button type="submit">Generate Study Plan</button>
+            </form>
+        </div>
+
+        <div class="results-container" id="resultsContainer" style="display: none;">
+            <h2>Performance Analysis</h2>
+            <div class="chart-container">
+                <canvas id="performanceChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="performancePieChart"></canvas>
+            </div>
+            <div id="studyPlanSection">
+                <h2>Personalized Study Plan</h2>
+                <div class="recommendation-container" id="recommendationContainer">
+                    <p>Identify subjects where scores are below 70% and focus on additional practice.</p>
+                </div>
+                <div class="total-percentage">
+                    <h3>Total Percentage: <span id="totalPercentage"></span>%</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
